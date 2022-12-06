@@ -1,0 +1,199 @@
+###
+//Ingresar usuario
+POST http://localhost:9000/api/usuarios/ HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Javier",
+  "email": "javier@email.com",
+  "estado": true
+}
+
+###
+//Consultar todos los usuarios
+GET http://localhost:9000/api/usuarios/ HTTP/1.1
+
+###
+//Consultar por id usuario
+GET http://localhost:9000/api/usuarios/627d718ce7d4e0a42a3f2959 HTTP/1.1
+
+###
+//Borrar usuario
+DELETE http://localhost:9000/api/usuarios/62828e0951fc72941bb3f614 HTTP/1.1
+
+###
+//Actualizar usuario
+PUT http://localhost:9000/api/usuarios/627d718ce7d4e0a42a3f2959 HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Julios",
+  "email": "julio@hotmail.com",
+  "estado": "true"
+}
+
+
+###
+//Consultar todos los tipos de equipos
+GET http://localhost:9000/api/tiposequipo HTTP/1.1
+
+###
+//Consultar solo los tipos de equipos activos
+GET http://localhost:9000/api/tiposequipo/active HTTP/1.1
+
+//Ingresar tipoEquipo
+###
+POST http://localhost:9000/api/tiposequipo HTTP/1.1
+Content-Type: application/json
+
+{
+  "nombre": "Celular",
+  "estado": true,
+  "usuario": {
+      "email": "julio@gmail.com"
+  }
+}
+###
+//Actualizar tipoEquipo
+PUT http://localhost:9000/api/tiposequipo/6289036bff497da443e6a095 HTTP/1.1
+Content-Type: application/json
+
+{
+  "nombre": "Celular",
+  "estado": false,
+  "usuario":{
+    "email": "julio@hotmail.com"
+  }
+}
+
+###
+//Consultar tipoequipo por id
+GET http://localhost:9000/api/tiposequipo/628833636146cb5b86071c55 HTTP/1.1
+
+
+###
+//Borrar tipo equipo
+DELETE http://localhost:9000/api/tiposequipo/6288fd753de61f45a7c58bbb HTTP/1.1
+
+###
+//Ingresar marca
+POST http://localhost:9000/api/marca/ HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Sony"
+}
+
+###
+//Consultar todas las marcas
+GET http://localhost:9000/api/marca HTTP/1.1
+
+###
+//Consultar solo marcas activas
+GET http://localhost:9000/api/marca/active HTTP/1.1
+
+###
+//Consultar marca por id
+GET http://localhost:9000/api/marca/62890c1c20165f0aeb391246 HTTP/1.1
+
+###
+//Borrar marca
+DELETE http://localhost:9000/api/marca/62890c1c20165f0aeb391246 HTTP/1.1
+
+###
+//Actualizar marca
+PUT http://localhost:9000/api/marca/62890c1c20165f0aeb391246 HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Xiaomi",
+  "estado": false
+}
+
+###
+//Ingresar estado equipo
+POST http://localhost:9000/api/estado/ HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "En bodega"
+}
+
+###
+//Consultar todos los estados
+GET http://localhost:9000/api/estado HTTP/1.1
+
+###
+//Consultar solo los estados con estado true
+GET http://localhost:9000/api/estado/active HTTP/1.1
+
+
+###
+//Consultar estado por id
+GET http://localhost:9000/api/estado/62891097b29019c762fe2fd0 HTTP/1.1
+
+
+###
+//Borrar estado
+DELETE http://localhost:9000/api/estado/628a9d7411cdd84a1b467d76 HTTP/1.1
+
+###
+//Actualizar estado
+PUT http://localhost:9000/api/estado/628aaeb62629f675c2864509 HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "En Bodega",
+  "estado": false
+}
+
+###
+//Ingresar inventario
+POST http://localhost:9000/api/inventarios/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "serial": "3",
+    "modelo": "2025",
+    "descripcion": "Laptop verde",
+    "color": "verde",
+    "precio": 2500000,
+    "usuario": "627d718ce7d4e0a42a3f2959",
+    "marca": "628a9e552602d10138592b33",
+    "estado": "62891097b29019c762fe2fd0",
+    "tipoEquipo": "628833636146cb5b86071c55"
+}
+
+
+
+###
+//Consultar todo el inventario
+GET http://localhost:9000/api/inventarios HTTP/1.1
+
+
+###
+//Consultar inventario por id
+GET http://localhost:9000/api/inventarios/62912ee7adb265d2a5344702 HTTP/1.1
+
+###
+//Borrar inventario
+DELETE http://localhost:9000/api/inventarios/629131e4adf40eb9ba6d9ec9 HTTP/1.1
+
+
+###
+//Actualizar inventario
+PUT http://localhost:9000/api/inventarios/62912ee7adb265d2a5344702 HTTP/1.1
+Content-Type: application/json
+
+{
+    "serial": "0",
+    "modelo": "2020",
+    "descripcion": "Laptop naranja",
+    "color": "naranja",
+    "precio": 2500000,
+    "usuario": "627d718ce7d4e0a42a3f2959",
+    "marca": "628a9e552602d10138592b33",
+    "estado": "62891097b29019c762fe2fd0",
+    "tipoEquipo": "628833636146cb5b86071c55"
+}
+
